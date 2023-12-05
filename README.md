@@ -5,6 +5,6 @@ https://wiki.cs.rit.edu/index.php/Using_gpu_nodes
 
 Data files on the GPU nodes:
 
-Images: _/local/datasets/idai720/images_
+Images: _/local/datasets/idai720/images/_
 
 Pre-trained weights: _/local/datasets/idai720/checkpoint/vgg_face_weights.h5_
