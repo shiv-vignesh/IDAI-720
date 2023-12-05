@@ -7,7 +7,7 @@ def load_scut(file = "../data/train.csv"):
 
     def retrievePixels(path):
         # Load image as pixels
-        img = tf.keras.utils.load_img("../images/" + path, target_size=(224, 224), grayscale=False)
+        img = tf.keras.utils.load_img("/local/datasets/idai720/images/" + path, target_size=(224, 224), grayscale=False)
         x = tf.keras.utils.img_to_array(img)
         return x
 

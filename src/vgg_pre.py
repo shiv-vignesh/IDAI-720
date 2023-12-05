@@ -68,7 +68,7 @@ class VGG_Pre:
             # Load the pre-trained weights
             # you can find it here: https://drive.google.com/file/d/1CPSeum3HpopfomUEK1gybeuIVoeJT_Eo/view?usp=sharing
             # related blog post: https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/
-            base_model.load_weights('checkpoint/vgg_face_weights.h5')
+            base_model.load_weights('/local/datasets/idai720/checkpoint/vgg_face_weights.h5')
 
             # Discard the output layers of the pre-trained model
             base_model_output = tf.keras.layers.Flatten()(base_model.layers[-4].output)
