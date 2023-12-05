@@ -1,13 +1,15 @@
 import pandas as pd
 import tensorflow as tf
 
+# Change the following path if you are not running on CS Clusters
+image_path = "/local/datasets/idai720/images/"
 
 def load_scut(file = "../data/train.csv"):
     # Load data file from the input file path
 
     def retrievePixels(path):
         # Load image as pixels
-        img = tf.keras.utils.load_img("/local/datasets/idai720/images/" + path, target_size=(224, 224), grayscale=False)
+        img = tf.keras.utils.load_img(image_path + path, target_size=(224, 224), grayscale=False)
         x = tf.keras.utils.img_to_array(img)
         return x
 
