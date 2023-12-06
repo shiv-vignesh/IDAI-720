@@ -8,7 +8,7 @@ train, protected = load_scut("../data/train.csv")
 X = np.array([pixel for pixel in train['pixels']])/255.0
 y = np.array(train["Rating"])
 # Load the previous trained model
-model = VGG_Pre("./checkpoint/attractiveness.hdf5")
+model = VGG_Pre("./checkpoint/attractiveness.keras")
 
 # Get the top k=10 uncertain data points from the pool
 pool, protected = load_scut("../data/pool.csv")
