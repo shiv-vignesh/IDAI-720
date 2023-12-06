@@ -5,7 +5,7 @@ import tensorflow as tf
 from pdb import set_trace
 
 # Load the previous trained model
-model = VGG_Pre("./checkpoint/attractiveness.hdf5")
+model = VGG_Pre("./checkpoint/attractiveness.keras")
 
 # Load test data
 test, protected = load_scut("../data/test.csv")
