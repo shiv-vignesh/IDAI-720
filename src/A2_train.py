@@ -9,7 +9,7 @@ train, protected = load_scut("../data/train.csv")
 X = np.array([pixel for pixel in train['pixels']])/255.0
 y = np.array(train["Rating"])
 # Load the previous trained model
-model = VGG_Pre("./checkpoint/attractiveness.hdf5")
+model = VGG_Pre("./checkpoint/attractiveness.keras")
 # Fine-tune the model on the new training data
 model.fit(X, y, epochs=10)
 
