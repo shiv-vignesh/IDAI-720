@@ -1,3 +1,4 @@
 ####### required packages #######
 tensorflow
 pandas
+pillow
