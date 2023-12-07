@@ -15,8 +15,10 @@ y = np.array(test["Rating"])
 for i in range(len(y)):
     # Explain the model around the ith test data point
     inputs = tf.Variable([X[i]])
-    file_name = test["Filename"][i]
+    file_name = test["Filename"][i].split('.')[0]
     grad = model.output_grad(inputs)
     pil_img = tf.keras.utils.array_to_img(grad, scale=True)
     pil_img.save("../explain/" + str(file_name) + ".jpg")
+    original_img = tf.keras.utils.array_to_img(X[i], scale=True)
+    original_img.save("../explain/" + str(file_name) + "_original.jpg")
 
