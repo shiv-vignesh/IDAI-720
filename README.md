@@ -1,5 +1,8 @@
 # IDAI-720
 
+Change your password of CS Account:
+https://knockknock.cs.rit.edu/
+
 Using the GPU nodes:
 https://wiki.cs.rit.edu/index.php/Using_gpu_nodes
 
