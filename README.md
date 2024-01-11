@@ -1,4 +1,4 @@
-# IDAI-720
+# IDAI-720 Research Methods for AI
 
 Change your password of CS Account:
 https://knockknock.cs.rit.edu/
