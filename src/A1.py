@@ -10,6 +10,8 @@ y = np.array(train["Rating"])
 model = VGG_Pre()
 # Fine-tune the model on the training data for the rating task
 model.fit(X, y, epochs=50)
+# Load the model weights with lowest val_loss
+model.load_model('checkpoint/attractiveness.keras')
 
 # Load test data
 test, protected = load_scut("../data/test.csv")
