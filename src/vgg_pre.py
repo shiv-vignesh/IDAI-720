@@ -88,7 +88,7 @@ class VGG_Pre:
         else:
             self.load_model(pretrained)
 
-    def fit(self, X, y, sample_weight=None, epochs = 50):
+    def fit(self, X, y, sample_weight=None, epochs = 50, batch_size = 10):
         # Fit the model on training data (X, y) by using 20% of the data as validation data
         lr_reduce = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss', patience=10, verbose=1, mode='auto',
                                                          min_lr=5e-5)
@@ -110,7 +110,9 @@ class VGG_Pre:
             val_weight = sample_weight[val_ind]
         # Fit model
         self.model.fit(X[train_ind], y[train_ind], sample_weight=train_weight, callbacks=[lr_reduce, checkpointer],
-                       validation_data=(X[val_ind], y[val_ind], val_weight), batch_size=10, epochs=epochs, verbose=1)
+                       validation_data=(X[val_ind], y[val_ind], val_weight), batch_size=batch_size, epochs=epochs, verbose=1)
+        # Load the model weights with lowest val_loss
+        self.load_model('checkpoint/attractiveness.keras')
 
     def predict(self, X):
         # Make predictions (binary classes) on input data X
