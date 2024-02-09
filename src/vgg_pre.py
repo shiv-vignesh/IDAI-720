@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="0" # Change the number 0 to your corresponding GPU ID in the Google Sheet
+os.environ["CUDA_VISIBLE_DEVICES"]="6" # Change the number 0 to your corresponding GPU ID in the Google Sheet
 
 # Change the following path if you are not running on CS Clusters
 weight_path = "/local/datasets/idai720/checkpoint/vgg_face_weights.h5"
@@ -92,7 +92,7 @@ class VGG_Pre:
         # Fit the model on training data (X, y) by using 20% of the data as validation data
         lr_reduce = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss', patience=10, verbose=1, mode='auto',
                                                          min_lr=5e-5)
-        checkpointer = tf.keras.callbacks.ModelCheckpoint(filepath='checkpoint/attractiveness.keras'
+        checkpointer = tf.keras.callbacks.ModelCheckpoint(filepath='checkpoint/attractiveness.x'
                                                           , monitor="val_loss", verbose=1
                                                           , save_best_only=True, mode='auto'
                                                           )
