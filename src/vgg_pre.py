@@ -112,7 +112,7 @@ class VGG_Pre:
         self.model.fit(X[train_ind], y[train_ind], sample_weight=train_weight, callbacks=[lr_reduce, checkpointer],
                        validation_data=(X[val_ind], y[val_ind], val_weight), batch_size=batch_size, epochs=epochs, verbose=1)
         # Load the model weights with lowest val_loss
-        self.load_model('checkpoint/attractiveness.keras')
+        self.load_model('checkpoint/attractiveness.x')
 
     def predict(self, X):
         # Make predictions (binary classes) on input data X
@@ -135,6 +135,11 @@ class VGG_Pre:
         # k: number of data points selected to query for oracles
         # Return the indices of top k most uncertain predictions
         # Write your code below:
+
+        pred = self.model.predict(X) 
+
+        inds = np.min(pred, axis=1)
+        inds = np.argsort(inds)
 
         return inds[:k]
 
