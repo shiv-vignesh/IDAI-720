@@ -4,7 +4,7 @@ from metrics import Metrics
 import numpy as np
 
 # Load the previous trained model
-model = VGG_Pre("./checkpoint/attractiveness.keras")
+model = VGG_Pre("./checkpoint/attractiveness.x")
 
 # Load test data
 test, protected = load_scut("../data/test.csv")
